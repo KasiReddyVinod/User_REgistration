@@ -1,0 +1,17 @@
+{% extends 'dummy.html' %}
+{% block title %}
+    <title>registration</title>
+{% endblock %}
+
+{% block body_block %}
+        <fieldset style="background-color: aqua;" width="fit-content">
+            <legend>Registration Form</legend>
+        <form method="POST" enctype="multipart/form-data" style="color: blueviolet;">
+            {% csrf_token %}
+
+                {{ufo.as_p}}
+                {{pfo.as_p}}
+        <input type="submit" value="register" class="btn btn-danger" style="border-radius: 30px;">
+        </form>
+</fieldset>
+{% endblock %}

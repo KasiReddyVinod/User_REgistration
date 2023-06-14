@@ -1,0 +1,56 @@
+{% extends 'dummy.html' %}
+{% block title %}
+    <title>user_login</title>
+    <style>
+        form{
+            background-color: aqua;
+            width: fit-content;
+
+            
+        }
+        body{
+            background-image: url("https://static1.hdwallpapers.net/wallpapers/2019/02/25/1179/thumb_purple-waves.jpg");
+        
+        }
+        h1{
+            color: ghostwhite;
+        }
+        a{
+            text-decoration: dotted;
+            color: ghostwhite;
+        }
+    </style>
+{% endblock %}
+<style>
+    form{
+        background-color: aqua;
+    }
+</style>
+{% block body_block %}
+    <center>
+       <marquee behavior="alternate" direction="left"> <h1>user_login Form</h1></marquee>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username"><br>
+
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password"><br>
+
+            <input type="submit" value="user_login" class="btn btn-danger">
+
+
+
+
+
+
+
+
+        </form>
+        <a href="{% url 'forgot_password' %}">Forgot Password</a>
+        </center>
+
+{% endblock %}
